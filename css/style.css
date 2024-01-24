@@ -1,0 +1,16 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.bg{
+    background-color: rgb(53, 52, 52);
+}
+
+.container-match{
+    background-color: rgb(185, 44, 1);
+    padding: 15px 15px;
+    border-radius: 10px;
+}
