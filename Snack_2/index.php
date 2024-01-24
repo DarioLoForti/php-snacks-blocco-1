@@ -1,3 +1,18 @@
+<?php
+
+if (isset($_GET['nome']) && isset($_GET['email']) && isset($_GET['eta'])) {
+
+    if (strlen($_GET['nome']) > 3 && str_contains($_GET['email'], '.') && str_contains($_GET['email'], '@')  && is_numeric($_GET['eta'])) {
+        
+        $accesso = 'accesso riuscito';
+    }else{
+        
+        $accesso = 'accesso negato';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,21 +33,30 @@
                     <div class="row">
                         <div class="col-4 py-5">
                             <label for="control-label">Nome</label>
-                            <input type="text" id="nome" class="form-control" name="nome" placeholder="inserisci nome" required>
+                            <input type="text" id="nome" class="form-control" name="nome" placeholder="inserisci nome" >
                         </div>
                         <div class="col-4 py-5">
                         <label for="control-label">Email</label>
-                            <input type="email" id="email" class="form-control" name="email" placeholder="inserisci la tua email" required>
+                            <input type="email" id="email" class="form-control" name="email" placeholder="inserisci la tua email" >
                         </div>
                         <div class="col-4 py-5">
                         <label for="control-label">Età</label>
-                            <input type="text" id="età" class="form-control" name="età" placeholder="inserisci la tua età" required>
+                            <input type="text" id="eta" class="form-control" name="eta" placeholder="inserisci la tua età" >
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-sm btn-success">Invia</button>
                         </div>
+                    </form>
+                        <div class="col-12 py-5">
+                            <?php if (isset($accesso)) {
+                                if($accesso == 'accesso riuscito'){
+                                ?> <h5 > <?php echo $accesso; ?> </h5> <?php
+                                }else{
+                                ?> <h5> <?php echo $accesso; ?> </h5> <?php
+                                }
+                            } ?>
+                        </div>
                     </div>
-                </form>
             </div>
         </div>
     </div>
