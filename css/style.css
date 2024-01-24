@@ -12,5 +12,8 @@
 .container-match{
     background-color: rgb(185, 44, 1);
     padding: 15px 15px;
-    border-radius: 10px;
+}
+.container-post{
+    background-color: rgb(255, 255, 255);
+    padding: 15px 15px;
 }
